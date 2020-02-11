@@ -1,0 +1,10 @@
+﻿@*@model OnlineShopCart.Data.Models.Product*@
+@model Product
+
+<div class="col-lg-2">
+    <img class="img-thumbnail" src="@Model.Img" alt="@Model.Name" />
+    <h5>@Model.Name</h5>
+    <p>@Model.ShortDesc</p>
+    <p>Price: @Model.Price.ToString("c")</p> <br />
+    <p><a class="btn btn-warning" asp-controller="ShopCart" asp-action="addToCart" asp-route-id="@Model.Id">Add to cart</a></p>
+</div>

@@ -1,0 +1,43 @@
+﻿<!-- using OnlineShopCart.ViewModels -->
+<!-- model ProductListViewModel -->
+
+<!-- using OnlineShopCart.Data.Models -->
+<!-- model IEnumerable<Product> -->
+
+<!-- {
+    Layout = "_Layout";
+} -->
+<!-- <!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List</title>
+</head>
+<body> -->
+
+<h1 class="container mt-1">All Games</h1>
+<!-- <h3>ViewBag.Category</h3> <br /> -->
+<h3 class="container mt-1">@Model.CurrentCategory</h3>
+<br />
+<div class="row mt-5 mb-2 ml-5 mr-5">
+    @{
+        //foreach (var product in Model)
+
+        foreach (Product product in Model.AllProducts)
+        {
+            @*<div class="col-lg-2">
+                <img class="img-thumbnail" src="@product.Img" alt="@product.Name" />
+                <h5>@product.Name</h5>
+                <p>@product.ShortDesc</p>
+                <p>Price: @product.Price.ToString("c")</p> <br />
+                <p><a class="btn btn-warning" href="#">More...</a></p>
+            </div>*@
+
+            @Html.Partial("AllProducts", product)
+        }
+    }
+</div>
+
+<!-- </body>
+</html> -->
